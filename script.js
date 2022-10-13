@@ -1,4 +1,3 @@
-// const API_KEY = 'ab9d71c40691497499ff3508c6ec7c5e'
 const BASE_URL = 'https://api.themoviedb.org/3'
 const API_URL = BASE_URL + '/discover/movie?api_key=ab9d71c40691497499ff3508c6ec7c5e&sort_by=popularity.desc&page=1'
 const IMG_URL = 'https://image.tmdb.org/t/p/w500'
@@ -11,7 +10,6 @@ getMovies(API_URL)
 
 function getMovies(url){
     fetch(url).then(res => res.json()).then(data => {
-        console.log(data);
         showMovies(data.results)
     })
 }
@@ -82,7 +80,7 @@ function showMovies(data){
             <img src="${IMG_URL+poster_path}" alt="${title}">
 
             <div class="movie-info">
-                <h3>${title}</h3>
+                <h4>${title}</h4>
                 <span class="${getColor(vote_average)}">${vote_average}</span>
             </div>
             <div class="date">

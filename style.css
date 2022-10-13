@@ -3,8 +3,8 @@
     box-sizing: border-box;
 }
 :root{
-    --primary-color: #22254b;
-    --secondary-color: #373b69;
+    --primary-color: #000;
+    --secondary-color: #1D1615;
 }
 body{
     background-color: var(--primary-color);
@@ -22,20 +22,49 @@ header h1{
     color: #eee;
 }
 .search{
-    background-color: transparent;
-    border: 2px solid var(--primary-color);
+    background-color: #3B2C2A;
+    border: 2px solid var(--secondary-color);
     padding: 0.5rem 1rem;
     border-radius: 5px;
     font-size: 1rem;
     color: #fff;
     font-family: inherit;
 }
+@media screen and (max-width: 663px) {
+    .search{
+        width: 150px;
+        height: 35px;
+    }
+    header h1{
+        font-size: 1.5em;
+    }
+}
+@media screen and (max-width: 410px) {
+    .search{
+        width: 130px;
+        font-size: 0.8rem;
+    }
+    header h1{
+        font-size: 1.3em;
+    }
+}
+@media screen and (max-width: 280px) {
+    .search{
+        width: 100px;
+        height: 25px;
+        font-size: 0.6rem;
+        padding: 0.5rem 0.5rem;
+    }
+    header h1{
+        font-size: 1.2em;
+    }
+}
 .search:focus{
     outline: 0;
     background-color: var(--primary-color);
 }
 .search::placeholder{
-    color: #7378c5;
+    color: #fff;
 }
 main{
     display: flex;
